@@ -68,7 +68,7 @@ export default {
         {
           hid: 'article:title',
           property: 'article:title',
-          content: `${this.post.title} - Corner of Progress`,
+          content: `${this.post.title} - Blog`,
         },
         {
           hid: 'article:description',
