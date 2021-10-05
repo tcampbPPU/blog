@@ -1,0 +1,16 @@
+name: Deploy to branches tied to environments
+
+on:
+  push:
+    branches: [ production ]
+
+jobs:
+  fume:
+    name: Deploy with Fume
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: fumeapp/action@master
+        with:
+          token: ${{ secrets.FUME_TOKEN }}
+          environment: ${GITHUB_REF##*/}

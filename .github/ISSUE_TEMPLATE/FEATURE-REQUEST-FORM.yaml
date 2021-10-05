@@ -1,0 +1,11 @@
+name: 🏗️ Request
+description: Article request
+title: "[TITLE]"
+labels: [suggestion]
+body:
+- type: textarea
+  attributes:
+    label: Submit your idea.
+    description: Create a suggestion for an article I should write next.
+  validations:
+    required: true

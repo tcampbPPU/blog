@@ -1,0 +1,38 @@
+name: 🐞 Bug
+description: Report a bug/issue
+title: "[BUG]"
+labels: [bug]
+body:
+- type: textarea
+  attributes:
+    label: What happened?
+    description: A concise description of what you're experiencing.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Steps To Reproduce
+    description: Steps to reproduce the behavior.
+  validations:
+    required: false
+- type: dropdown
+  id: browsers
+  attributes:
+    label: What browsers are you seeing the problem on?
+    multiple: true
+    options:
+      - Firefox
+      - Chrome
+      - Safari
+      - Microsoft Edge
+  validations:
+    required: true
+- type: dropdown
+  id: os-system
+  attributes:
+    label: Which operating system where you on?
+    options:
+      - Windows
+      - Mac
+      - Linux
+      - Other
