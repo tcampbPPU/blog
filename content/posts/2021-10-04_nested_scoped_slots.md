@@ -6,6 +6,9 @@ updatedAt: 2021-10-04
 slug: nested_scoped_slots
 ---
 
+Scoped slots are a powerful tool allowing us to expose data back to the parent to control the data, layout, and styling. This is a key component in building renderless components, allowing 
+so much customization on your component based architecture.
+
 To get a basic overview lets setup some demo code.
 
 Starting off let us create an initial component acting as our `Parent` component called `index.vue`. This could be for example a page that shows a board of tasks.
@@ -50,12 +53,12 @@ export default {
 </script>
 ```
 
-Next, skipping ahead we are going to setup our `Grandchild` component. This is because this component will do very little, its only going be have template HTML markup that will
+Next, skipping ahead we are going to setup our `Grandchild` component. This is because this component will do very little. Its only going to have template HTML markup that will
 design the layout of our card
 
 ```vue [~/components/Grandchild.vue]
 <template>
-  <div class="bg-white shadow rounded px-3 pt-3 pb-5 border border-white">
+  <div class="bg-white shadow rounded px-3 pt-3">
     <div class="flex justify-between">
       <slot name="title" />
     </div>
@@ -102,14 +105,33 @@ Now lets create our `Child` component for our `index.vue` page we setup earlier.
 
 <script>
 export default {
-  props: {
-    columns: Array,
-  },
+  props: { columns: Array },
 }
 </script>
 ```
-Example the points ...
+In this component we are making use of the `template` tags which will handle the passed data from its child. But to make work with its own parent we define some additional slots to be passed up.
 
 Now back in our `Parent` index.vue we have full control over which data we want to display and how to render it.
 
-<!-- TODO -->
+
+```vue [~/pages/index.vue]
+<child-component
+  :columns="columns"
+>
+  <template #label="{ column }">
+    <!-- Here Can Customize the label of each column -->
+    {{ column.label }}
+  </template>
+  <template #title="{ task }">
+    <!-- Customize each task title within each column  -->
+    {{ task.title }}
+  </template>
+  <template #body="{ task }">
+    <!-- Customize each task body within each column  -->
+    {{ task.body }}
+  </template>
+</child-component>
+```
+
+Using Vue's slots are an awesome way to build components where you can define the base structure and logic then have the parent control the presentation of the data. This way you can
+create the component once and reuse in your application with easy customization per each use.
