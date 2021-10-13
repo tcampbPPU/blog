@@ -1,8 +1,8 @@
 ---
 title: GitHub action for automatic dependency updates
 description: Setting up automatic dependency updates with GitHub dependabot action.
-createdAt: 2021-10-14
-updatedAt: 2021-10-14
+createdAt: 2021-10-12
+updatedAt: 2021-10-12
 slug: github_action_automatic_dependency_updates
 ---
 
