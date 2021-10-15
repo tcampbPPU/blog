@@ -1,5 +1,5 @@
 ---
-title: Building our own custom Laravel generator commands
+title: Building your own custom Laravel generator commands
 description: How to setup your own Laravel "make" generator commands.
 createdAt: 2021-10-13
 updatedAt: 2021-10-13

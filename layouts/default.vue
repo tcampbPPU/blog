@@ -11,7 +11,7 @@
             <h1
               class="text-3xl font-extrabold text-gray-900 tracking-tight dark:text-gray-100"
             >
-              My Blog
+              Tanner's Blog
             </h1>
           </n-link>
         </div>
