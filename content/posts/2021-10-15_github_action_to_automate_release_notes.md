@@ -61,8 +61,6 @@ tag-template: 'v$RESOLVED_VERSION'
 categories:
   - title: '🚀 Features'
     label: 'feature'
-      - 'enhancement'
-      - 'improvement'
   - title: '🐛 Bug Fixes'
     label: 'bugfix'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
