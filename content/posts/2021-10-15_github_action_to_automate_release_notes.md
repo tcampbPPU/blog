@@ -1,18 +1,18 @@
 ---
-title: Github action to automate release notes
+title: GitHub action to automate release notes
 description: Setting up GitHub action to automatically build version release draft notes.
 createdAt: 2021-10-15
 updatedAt: 2021-10-15
 slug: github_action_to_automate_release_notes
 ---
 
-Maintaining an open source or client project can be a lot of work itself. One important item for your customers, users, and yourself are proper documentation on what's been released. When using GitHub you can the Releases feature to easily track any updates and/or fixes to bugs. Typically, developers use semantic versioning for each release that symbolizes the Major, Minor, and Patch version of the software. However, keeping these `Release Notes` for each software version can become a lot to remember to do and in some cases is often a specific person job and responsibility at larger companies.
+Maintaining an open source or client project can be a lot of work itself. One important item for your customers, users, and yourself are proper documentation on what's been released. When using GitHub you can use the Releases feature to easily track any updates and/or fixes to bugs. Typically, developers use semantic versioning for each release that symbolizes the Major, Minor, and Patch version of the software. However, keeping these `Release Notes` for each software version can become a lot to remember to do and in some cases is often a specific person job and responsibility at larger companies.
 
-In this post I will show you how to quick and easily setup an GitHub action that can automatically build these release notes for you!
+In this post I will show you how to quick and easily setup a GitHub action that can automatically build these release notes for you!
 
 Starting off we are going to use the existing GitHub action workflow [release-drafter](https://github.com/release-drafter/release-drafter).
 
-To add this to your project you are going to need to create the following file within the `.github/workflow/` directory
+To add this to your project you are going to need to create the following file within the `.github/workflows/` directory
 
 ```bash
 $ touch .github/workflows/release-drafter.yml
