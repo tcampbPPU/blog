@@ -21,3 +21,5 @@ These are just a few of the technologies I love and use daily, so most of my blo
 <list :items="technologies"></list>
 
 Follow me over on [GitHub](https://github.com/tcampbPPU)
+
+I promise I will write more 🤞
