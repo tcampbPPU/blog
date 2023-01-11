@@ -119,11 +119,9 @@ declare module "*.vue" {
 
 And the following to `inertia.d.ts`.
 
-````typescript
-
 ```bash
 touch resources/js/types/inertia.d.ts
-````
+```
 
 ```typescript
 import { PageProps } from "@inertiajs/inertia";
@@ -197,22 +195,25 @@ defineProps({
         v-if="($page.props as inertia.Props).user"
         :href="route('dashboard')"
         class="text-sm text-gray-700 dark:text-gray-500 underline"
-        >Dashboard</Link
       >
+        Dashboard
+      </Link>
 
       <template v-else>
         <Link
           :href="route('login')"
           class="text-sm text-gray-700 dark:text-gray-500 underline"
-          >Log in</Link
         >
+          Log in
+        </Link>
 
         <Link
           v-if="canRegister"
           :href="route('register')"
           class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"
-          >Register</Link
         >
+          Register
+        </Link>
       </template>
     </div>
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
