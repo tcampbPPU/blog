@@ -232,3 +232,5 @@ defineProps({
 And that is it. You should now be able to use Typescript in your Jetstream project!
 
 A few things you will now notice when using the `<Link>` component I can strongly type my expected inertia props. Which makes it easier to define things like what is a User, which you can define a type or interface for. To learn more about that checkout my [Generating TypeScript Interfaces & Types from Laravel Models](https://tannercampbell.com/generating_typescript_interfaces_from_laravel_models) to learn how you can easily generate types for your models.
+
+TLDR: A link to the example repo: [ts-inertia-vue](https://github.com/tcampbPPU/ts-inertia-vue)
