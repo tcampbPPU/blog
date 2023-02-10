@@ -2,7 +2,7 @@
 title: Integrating TypeScript with Inertia.js and Vue.js
 description: How to setup and use TypeScript with Inertia.js and Vue.js
 createdAt: 2023-01-04
-updatedAt: 2023-01-04
+updatedAt: 2023-02-09
 slug: using_typescript_with_inertiajs_and_vue
 ---
 
@@ -124,12 +124,10 @@ touch resources/js/types/inertia.d.ts
 ```
 
 ```typescript
-import { PageProps } from "@inertiajs/inertia";
-
 export {};
 declare global {
   export namespace inertia {
-    export interface Props extends PageProps {
+    export interface Props {
       user: {
         id: number;
         name: string;
@@ -172,16 +170,19 @@ Alright lets update the `resources/js/Pages/Welcome.vue`
 
 ```vue
 <script lang="ts" setup>
-import { PropType } from "vue";
-import route from "ziggy-js";
-import { Head, Link } from "@inertiajs/inertia-vue3";
+import type { PropType } from 'vue'
+import { computed } from 'vue'
+import route from 'ziggy-js'
+import { Head, Link, usePage } from '@inertiajs/vue3'
 
 defineProps({
   canLogin: Boolean as PropType<boolean>,
   canRegister: Boolean as PropType<boolean>,
   laravelVersion: String as PropType<string>,
-  phpVersion: String as PropType<string>
-});
+  phpVersion: String as PropType<string>,
+})
+
+const user = computed(() => usePage().props?.user)
 </script>
 
 <template>
@@ -192,7 +193,7 @@ defineProps({
   >
     <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
       <Link
-        v-if="($page.props as inertia.Props).user"
+        v-if="user"
         :href="route('dashboard')"
         class="text-sm text-gray-700 dark:text-gray-500 underline"
       >
@@ -234,3 +235,9 @@ And that is it. You should now be able to use Typescript in your Jetstream proje
 A few things you will now notice when using the `<Link>` component I can strongly type my expected inertia props. Which makes it easier to define things like what is a User, which you can define a type or interface for. To learn more about that checkout my [Generating TypeScript Interfaces & Types from Laravel Models](https://tannercampbell.com/generating_typescript_interfaces_from_laravel_models) to learn how you can easily generate types for your models.
 
 TLDR: A link to the example repo: [ts-inertia-vue](https://github.com/tcampbPPU/ts-inertia-vue)
+
+## Note:
+
+I recently updated this post to upgrade to [Inertia.js v1.0](https://inertiajs.com/upgrade-guide) not much has changed from this post but how you would previously use the `usePage` has changed. You can read more about that in the [Inertia.js Upgrade Guide](https://inertiajs.com/upgrade-guide#usepage).
+
+There does not seem like an easy way to cast the props to a type like before, but since the usePage is now a method you could define a type for it in theory. I have not tried this yet, but I will update this post if I find a way to do it.
