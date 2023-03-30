@@ -7,6 +7,13 @@ technologies:
 - TailwindCSS
 - AWS Lambda
 - Go
+socialLinks:
+- name: LinkedIn
+  to: /linkedin
+- name: IMDB
+  to: /movies
+- name: Spotify
+  to: /spotify
 ---
 
 ## About
@@ -21,3 +28,5 @@ These are just a few of the technologies I love and use daily, so most of my blo
 <list :items="technologies"></list>
 
 Follow me over on [GitHub](https://github.com/tcampbPPU)
+
+<social-links :items="socialLinks"></social-links>
