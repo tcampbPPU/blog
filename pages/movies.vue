@@ -4,7 +4,6 @@ export default {
     window.location.href = 'https://www.imdb.com/user/ur43513344/ratings?ref_=nv_usr_rt_4'
   },
 }
-
 </script>
 
 <template>
