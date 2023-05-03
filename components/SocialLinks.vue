@@ -4,8 +4,9 @@
       Checkout my other pages:
       <span v-for="(item, i) in items" :key="i" class="">
         <n-link :to="item.to" class="n-link" :aria-label="`Route to ${item.name}`">
-          {{ item.name }} {{ i !== items.length - 1 ? ' | ' : '' }}
+          {{ item.name }}
         </n-link>
+        {{ i !== items.length - 1 ? ' | ' : '' }}
       </span>
     </div>
   </div>
