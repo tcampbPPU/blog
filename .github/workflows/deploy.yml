@@ -1,9 +1,7 @@
 name: Deploy to S3 Stage
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
