@@ -20,4 +20,5 @@ jobs:
       - uses: fumeapp/action@master
         with:
           token: ${{ secrets.FUME_TOKEN }}
-          environment: ${GITHUB_REF##*/}
+          environment: ${{ github.event.inputs.environment }}
+          # environment: ${GITHUB_REF##*/}
