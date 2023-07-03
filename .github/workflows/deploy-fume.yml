@@ -1,4 +1,4 @@
-name: Deploy to branches tied to environments
+name: Deploy Fume
 
 on:
   workflow_dispatch:
