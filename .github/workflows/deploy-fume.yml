@@ -1,8 +1,12 @@
 name: Deploy to branches tied to environments
 
 on:
-  push:
-    branches: [ production ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
 
 jobs:
   fume:
