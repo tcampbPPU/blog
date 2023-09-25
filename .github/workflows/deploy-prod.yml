@@ -33,3 +33,4 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME_PROD }} --delete
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PROD }} --paths "/*"
