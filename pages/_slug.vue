@@ -7,7 +7,7 @@
         </dt>
         <dd class="font-medium text-gray-500 dark:text-gray-400">
           <time :datetime="post.createdAt">
-            {{ $dayjs(post.createdAt).format('MMMM DD, YYYY') }}
+            {{ $dayjs(post.createdAt).utc().format('MMMM D, YYYY') }}
           </time>
         </dd>
       </dl>

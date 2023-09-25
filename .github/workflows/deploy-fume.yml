@@ -1,8 +1,12 @@
-name: Deploy to branches tied to environments
+name: Deploy Fume
 
 on:
-  push:
-    branches: [ production ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
 
 jobs:
   fume:
@@ -16,4 +20,5 @@ jobs:
       - uses: fumeapp/action@master
         with:
           token: ${{ secrets.FUME_TOKEN }}
-          environment: ${GITHUB_REF##*/}
+          environment: ${{ github.event.inputs.environment }}
+          # environment: ${GITHUB_REF##*/}

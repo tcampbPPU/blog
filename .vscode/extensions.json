@@ -1,0 +1,25 @@
+{
+    "recommendations": [
+        "formulahendry.auto-rename-tag",
+        "aaron-bond.better-comments",
+        "streetsidesoftware.code-spell-checker",
+        "vmsynkov.colonize",
+        "ms-azuretools.vscode-docker",
+        "mikestead.dotenv",
+        "EditorConfig.EditorConfig",
+        "dbaeumer.vscode-eslint",
+        "donjayamanne.githistory",
+        "github.vscode-github-actions",
+        "GitHub.copilot",
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "ms-vscode.vscode-typescript-next",
+        "christian-kohler.path-intellisense",
+        "bradlc.vscode-tailwindcss",
+        "Vue.vscode-typescript-vue-plugin",
+        "henrynguyen5-vsc.vsc-nvm",
+        "vscode-icons-team.vscode-icons",
+        "Vue.volar",
+        "redhat.vscode-yaml"
+    ],
+}

@@ -10,10 +10,10 @@ technologies:
 socialLinks:
 - name: LinkedIn
   to: /linkedin
-- name: IMDB
+- name: Movies
   to: /movies
-- name: Spotify
-  to: /spotify
+- name: Music
+  to: /music
 ---
 
 ## About
